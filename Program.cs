@@ -1,52 +1,42 @@
-﻿
-namespace Name // can run without the namespace too
+﻿using System;
+
+namespace HelloWorld
 {
-    public class MyFirstProgram
-    {
-        /// <summary>
-        /// That's the entry point of our application
-        /// </summary>
-
-        static float tax = 18f;
-
-        // some primitive data types Explicitly
-
-        float price = 3.99f;
-        string name = "John Doe";
-        char letter = 'a';
-        int number = 100000;
-        bool toggle = false;
-
-        public static void Main()
-        {
-            int age = 20;
-            Console.WriteLine("age variable is: " + age);
-            age = age + 5;
-            // age+=5;
-            Console.WriteLine("age now is: " + age);
-            float productA = 5.99f;
-            float productB = 7.45f;
-            float productC = 9.26f;
-
-            float summed = productA + productB + productC;
-            // float totalTax = (summed/100)*tax;
-            float totalTax = summed / 100 * tax;
-            summed += totalTax;
-            Console.WriteLine("Total Price of products a,b,c is: " + summed);
-
-            // Implicitly defining some data types, only can be done inside a method
-            var userName = "manjeshkgp";
-            Console.WriteLine("userName implicit variable is: " + userName);
-            Console.WriteLine("Now running swap");
-
-            int a = 10;
+    class Program {
+        static void Main(){
+            // WriteSomething();
+            // WriteSomethingSpecific("This is a sample string arg");
+            int a = 40;
             int b = 20;
-            Console.WriteLine("a = " + a + ", b = " + b);
-            int c = a;
-            a = b;
-            b = c;
-            Console.WriteLine("a = " + a + ", b = " + b);
+            int result = Add(a,b);
+            Console.WriteLine("a = "+a+" b = "+b+" a+b = "+ result);
+            result = Divide(a,b);
+            Console.WriteLine("a = "+a+" b = "+b+" a/b = "+ result);
+            result = Multiply(a,b);
+            Console.WriteLine("a = "+a+" b = "+b+" a*b = "+ result);
+            result = Subtract(a,b);
+            Console.WriteLine("a = "+a+" b = "+b+" a-b = "+ result);
+        }
+
+        public static int Add(int Param1, int Param2){
+            return Param1 + Param2;
+        }
+        public static int Subtract(int Param1, int Param2){
+            return Param1 - Param2;
+        }
+        public static int Divide(int Param1, int Param2){
+            return Param1 / Param2;
+        }
+        public static int Multiply(int Param1, int Param2){
+            return Param1 * Param2;
+        }
+        public static void WriteSomething(){
+            Console.WriteLine("I'm a called from a method");
+            Console.Read();
+        }
+        public static void WriteSomethingSpecific(string arg){
+            Console.WriteLine(arg);
+            Console.Read();
         }
     }
-
 }
