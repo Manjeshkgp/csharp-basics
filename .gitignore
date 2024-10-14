@@ -1,0 +1,47 @@
+# Ignore build directories
+/bin
+/obj
+
+# Ignore user-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore logs, lockfiles, and other unnecessary files
+*.log
+*.lock
+
+# Ignore compiled files and packages
+*.dll
+*.exe
+*.app
+*.apk
+*.jar
+*.so
+*.dylib
+*.o
+*.pdb
+*.class
+*.csproj.user
+
+# Ignore generated folders for VSCode or IDEs
+.vscode/
+.idea/
+
+# Ignore NuGet packages directory
+/packages/
+
+# Ignore Rider project files
+.idea/
+.idea/*
+*.sln.iml
+
+# Ignore other files that should not be committed
+*.tmp
+*.temp
+~$*
+
+# Ignore test results
+/TestResults/
