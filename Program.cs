@@ -1,25 +1,21 @@
 ﻿using System;
 
-namespace SwitchCase
+namespace ShortcutForIF
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int age = 20;
+            int temparature = 5;
+            string waterState;
+            if (temparature <= 0) waterState = "Solid";
+            else waterState = "Liquid";
 
-            switch (age)
-            {
-                case 15:
-                System.Console.WriteLine("You are a teenager");
-                break;
-                case 20:
-                System.Console.WriteLine("You must have a moustache, you are 20");
-                break; // you can use return; instead of break; as well, no error will be thrown
-                default:
-                System.Console.WriteLine("I'm not sure, how old you are");
-                break;
-            }
+            System.Console.WriteLine("State of water at temparature of {0} is {1}", temparature, waterState);
+
+            string aceticAcidState;
+            aceticAcidState = temparature >= 118 ? "Gaseous" : temparature > 17 ? "Liquid" : "Solid";
+            System.Console.WriteLine("State of acetic acid at temparature of {0} is {1}", temparature, aceticAcidState);
 
             Console.ReadKey(); // it helps to exit the program only after entering any key
         }
