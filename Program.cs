@@ -1,23 +1,24 @@
 ﻿using System;
 
-namespace ShortcutForIF
+namespace ForLoops
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int temparature = 5;
-            string waterState;
-            if (temparature <= 0) waterState = "Solid";
-            else waterState = "Liquid";
+            for(int counter = 0; counter < 10; counter++){
+                System.Console.WriteLine(counter);
+            }            
 
-            System.Console.WriteLine("State of water at temparature of {0} is {1}", temparature, waterState);
+            System.Console.WriteLine("writing only odd nums from 0 to 20");
+            // we can also use num = 1, num+=2
+            for(int num = 0; num<=20; num++){
+                if(num%2!=0){
+                    System.Console.WriteLine(num);
+                }
+            }
 
-            string aceticAcidState;
-            aceticAcidState = temparature >= 118 ? "Gaseous" : temparature > 17 ? "Liquid" : "Solid";
-            System.Console.WriteLine("State of acetic acid at temparature of {0} is {1}", temparature, aceticAcidState);
-
-            Console.ReadKey(); // it helps to exit the program only after entering any key
+            Console.Read(); // it helps to exit the program only after entering any key
         }
     }
 }
