@@ -1,24 +1,34 @@
 ﻿using System;
 
-namespace ForLoops
+namespace DowhileLoop
 {
     class Program
     {
         static void Main(string[] args)
         {
-            for(int counter = 0; counter < 10; counter++){
-                System.Console.WriteLine(counter);
-            }            
+            int lengthOfText = 0;
+            string wholeText = "";
 
-            System.Console.WriteLine("writing only odd nums from 0 to 20");
-            // we can also use num = 1, num+=2
-            for(int num = 0; num<=20; num++){
-                if(num%2!=0){
-                    System.Console.WriteLine(num);
+            do
+            {
+                Console.WriteLine("Please enter the name of a friend");
+                string nameOfAFriend = Console.ReadLine();
+                if (nameOfAFriend == null)
+                {
+                    System.Console.WriteLine("Your entry should not be null");
+                }
+                else
+                {
+                    int currentLength = nameOfAFriend.Length;
+                    lengthOfText += currentLength;
+                    wholeText += nameOfAFriend;
                 }
             }
+            while (lengthOfText < 20);
 
-            Console.Read(); // it helps to exit the program only after entering any key
+            Console.WriteLine("Thanks, that was enough! " + wholeText);
+            Console.Read();
         }
+
     }
 }
