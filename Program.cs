@@ -6,27 +6,12 @@ namespace DowhileLoop
     {
         static void Main(string[] args)
         {
-            int lengthOfText = 0;
-            string wholeText = "";
-
-            do
+            int counter = 0;
+            while (counter<10)
             {
-                Console.WriteLine("Please enter the name of a friend");
-                string nameOfAFriend = Console.ReadLine();
-                if (nameOfAFriend == null)
-                {
-                    System.Console.WriteLine("Your entry should not be null");
-                }
-                else
-                {
-                    int currentLength = nameOfAFriend.Length;
-                    lengthOfText += currentLength;
-                    wholeText += nameOfAFriend;
-                }
+                counter++;
+                System.Console.WriteLine(counter);
             }
-            while (lengthOfText < 20);
-
-            Console.WriteLine("Thanks, that was enough! " + wholeText);
             Console.Read();
         }
 
