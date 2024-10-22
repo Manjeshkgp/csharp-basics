@@ -6,14 +6,10 @@ namespace Class_Basics
     {
         static void Main(string[] args)
         {
-            Human denis = new Human();
-            denis.firstName = "Denis";
-            denis.lastName = "Richie";
+            Human denis = new Human("Desnis","Richie","Blue",29);
             denis.IntroduceMyself();
 
-            Human michael = new Human();
-            michael.firstName = "Michael";
-            michael.lastName = "Phelps";
+            Human michael = new Human("Michael","Phelps","Brown",22);
             michael.IntroduceMyself();
         }
 
