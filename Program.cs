@@ -1,24 +1,20 @@
 ﻿using System;
 
-namespace BreakContinue
+namespace Class_Basics
 {
     class Program
     {
         static void Main(string[] args)
         {
-          for (int i = 0; i < 10; i++)
-          {
-            if(i==3){
-                System.Console.WriteLine("At 3 we skip");
-                continue;
-            }
-            if(i==8){
-                System.Console.WriteLine("At 8 we stop");
-                break;
-            }
-            System.Console.WriteLine(i);
-          }
-            Console.Read();
+            Human denis = new Human();
+            denis.firstName = "Denis";
+            denis.lastName = "Richie";
+            denis.IntroduceMyself();
+
+            Human michael = new Human();
+            michael.firstName = "Michael";
+            michael.lastName = "Phelps";
+            michael.IntroduceMyself();
         }
 
     }
