@@ -10,7 +10,22 @@ namespace Class_Basics
         private string eyeColor;
         private int age;
 
-        // constructor
+        // default constructor
+        public Human(){
+            System.Console.WriteLine("Constructor Called, Object Created");
+        }
+
+
+        // parameterized constructor
+
+        public Human(string myfirstName, string lastName, string eyeColor)
+        {
+            firstName = myfirstName;
+            this.lastName = lastName;
+            this.eyeColor = eyeColor;
+        }
+        
+        // parameterized constructor
 
         public Human(string myfirstName, string lastName, string eyeColor, int age)
         {
@@ -23,7 +38,7 @@ namespace Class_Basics
         // member method
         public void IntroduceMyself()
         {
-            System.Console.WriteLine("Hi I'm {0} {1}, my eyeColor is {2} & my age is {3}", firstName, lastName,eyeColor,age);
+            System.Console.WriteLine("Hi I'm {0} {1}, my eyeColor is {2} & my age is {3}", firstName, lastName, eyeColor, age);
         }
     }
 }

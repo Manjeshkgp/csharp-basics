@@ -9,8 +9,11 @@ namespace Class_Basics
             Human denis = new Human("Desnis","Richie","Blue",29);
             denis.IntroduceMyself();
 
-            Human michael = new Human("Michael","Phelps","Brown",22);
+            Human michael = new Human("Michael","Phelps","Brown");
             michael.IntroduceMyself();
+
+            Human basicHuman = new Human();
+            basicHuman.IntroduceMyself();
         }
 
     }
