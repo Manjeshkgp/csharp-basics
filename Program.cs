@@ -1,4 +1,5 @@
 ﻿using System;
+using Properties;
 
 namespace Class_Basics
 {
@@ -6,14 +7,13 @@ namespace Class_Basics
     {
         static void Main(string[] args)
         {
-            Human denis = new Human("Desnis","Richie","Blue",29);
-            denis.IntroduceMyself();
-
-            Human michael = new Human("Michael","Phelps","Brown");
-            michael.IntroduceMyself();
-
-            Human basicHuman = new Human();
-            basicHuman.IntroduceMyself();
+            Box box = new Box();
+            box.Height = 10;
+            box.Width = 20;
+            box.SetLength(5);
+            System.Console.WriteLine("Length of the box is {0}",box.GetLength());
+            System.Console.WriteLine("Width of the box is {0}",box.Width);
+            box.DisplayInfo();
         }
 
     }
