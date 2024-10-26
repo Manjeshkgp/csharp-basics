@@ -4,51 +4,30 @@ namespace Arrays
 {
     class Program
     {
-        static void Main(string[] args)
+        static int[,] array2d = new int[,]
         {
-            // declare 2d array
-            string[,] twoDArr;
-
-            // declare 3d array
-            int[,,] threeDArr;
-
-
-            int[,] array2d = new int[,]
-            {
                 {1,2,3}, // row 0
                 {6,4,5}, // row 1
                 {7,8,9}, // row 2
-            };
-            System.Console.WriteLine("Central value is {0}", array2d[1, 1]); // we will get 4
-            // try to access 7
-            System.Console.WriteLine("2,0 position is {0}", array2d[2, 0]);
+        };
+        static void Main(string[] args)
+        {
 
-            string[,,] array3d = new string[,,]
+            foreach (var item in array2d)
             {
-                {
-                    {"Ram","Shyam"},
-                    {"C#",".NET"},
-                },
-                {
-                    {"Pratik","Tushar"},
-                    {"Rust","Java"},
-                },
-                {
-                    {"Hugh Jackman","Grant Gustin"},
-                    {"Wolverine","The best Flash"},
-                },
-            };
+                System.Console.Write(item+" ");
+            }
 
-            // finding Hugh Jackman
-            // 2nd row, 0th element, again 0th element
-            System.Console.WriteLine("2,0,0 is {0}", array3d[2, 0, 0]);
+            System.Console.Write("\n");
 
-            // below means 3 rows, 2 elements each row
-            string[,] array2dString = new string[3, 2] { { "one", "two" }, { "three", "four" }, { "five", "six" } };
-
-            // check an array dimension, i.e. 2d or 2d or 4d and so on ...
-            System.Console.WriteLine("array2dString is a {0}-D array",array2dString.Rank);
-            System.Console.WriteLine("array3d is a {0}-D array",array3d.Rank);
+            for (int i = 0; i < array2d.GetLength(0); i++) // gets length of the 0th Order, for the 1d array
+            {
+                for (int j = 0; j < array2d.GetLength(1); j++) // gets length of the 1st Order / 2d array
+                {
+                    // array2d[i,j] = i+j*i-j; you can't do this in foreach loop
+                    System.Console.WriteLine(array2d[i,j]);
+                }
+            }
 
             Console.ReadKey();
         }
