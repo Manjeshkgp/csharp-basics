@@ -6,21 +6,28 @@ namespace Arrays
     {
         static void Main(string[] args)
         {
-            int [] grades = new int[5]; // an array with 5 elements
-            grades[0] = 80;
-            grades[1] = 15;
-            grades[2] = 28;
-            grades[3] = 38;
-            grades[4] = -70;
+            int [] grades = new int[10]; // an array with 10 elements
 
-            // if you try to log the grades directly you will only be able to log dataType[], so you need to log elements one by one
-            // another way of initializing array
-            int [] sampleArr = {10,20,30,40,50};
+            for (int i = 0; i < 10; i++)
+            {
+                grades[i] = (i+1)*10;
+            }
 
-            // 3rd way of initializing array
-            int [] sampleArr2 = new int[] {10,20,30,40,50};
+            for (int i = 0; i < grades.Length; i++)
+            {
+                System.Console.WriteLine("Grade[{0}] = {1}",i,grades[i]);
+            }
 
-            System.Console.WriteLine("Length of sampleArr is {0}",sampleArr.Length);
+            foreach (int item in grades)
+            {
+                System.Console.WriteLine("{0}",item);
+            }
+            string [] friends = new string[5] {"Ram","Shyam","Mohit","Sohan","Pratik"};
+
+            foreach (string friend in friends)
+            {
+                System.Console.WriteLine("Happy Sunday {0}",friend);
+            }
 
             Console.ReadKey();
         }
