@@ -1,35 +1,41 @@
 ﻿using System;
 
-namespace Arrays
+namespace JaggedArrays
 {
     class Program
     {
-        static int[,] array2d = new int[,]
-        {
-                {1,2,3}, // row 0
-                {6,4,5}, // row 1
-                {7,8,9}, // row 2
-        };
         static void Main(string[] args)
         {
+            // declare jagged array
+            int[][] jaggedArray = new int[3][];
+            jaggedArray[0] = new int[5];
+            jaggedArray[1] = new int[3];
+            jaggedArray[2] = new int[2];
+            jaggedArray[0] = new int[] { 1, 2, 3, 4, 5, 5, 6, 6 };
+            jaggedArray[1] = new int[] { 3, 5, 6, 7, 6 };
+            jaggedArray[2] = new int[] { 9, 10 };
 
-            foreach (var item in array2d)
+            //another way
+
+            int[][] jaggedArray2 = new int[][]
             {
-                System.Console.Write(item+" ");
-            }
+                new int [] {12,3,4,4,5,56,56,6},
+                new int [] {99,34,9349,29,92,492},
+            };
 
-            System.Console.Write("\n");
+            // try to access 9349
 
-            for (int i = 0; i < array2d.GetLength(0); i++) // gets length of the 0th Order, for the 1d array
+            System.Console.WriteLine(jaggedArray2[1][2]);
+
+            // try to get all values of jaggedarray
+
+            for (int i = 0; i < jaggedArray2.Length; i++)
             {
-                for (int j = 0; j < array2d.GetLength(1); j++) // gets length of the 1st Order / 2d array
+                for (int j = 0; j < jaggedArray2[i].Length; j++)
                 {
-                    // array2d[i,j] = i+j*i-j; you can't do this in foreach loop
-                    System.Console.WriteLine(array2d[i,j]);
+                    System.Console.WriteLine(jaggedArray2[i][j]);
                 }
             }
-
-            Console.ReadKey();
         }
 
     }
