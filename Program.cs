@@ -1,42 +1,60 @@
 ﻿using System;
+using System.Collections;
 
 namespace JaggedArrays
 {
     class Program
     {
+
         static void Main(string[] args)
         {
-            // declare jagged array
-            int[][] jaggedArray = new int[3][];
-            jaggedArray[0] = new int[5];
-            jaggedArray[1] = new int[3];
-            jaggedArray[2] = new int[2];
-            jaggedArray[0] = new int[] { 1, 2, 3, 4, 5, 5, 6, 6 };
-            jaggedArray[1] = new int[] { 3, 5, 6, 7, 6 };
-            jaggedArray[2] = new int[] { 9, 10 };
+            // declaring ArrayLists with undefined no. of objects
+            ArrayList myArrayList = new ArrayList();
 
-            //another way
+            // declaring ArrayLists with defined no. of objects
 
-            int[][] jaggedArray2 = new int[][]
+            ArrayList myArrayList2 = new ArrayList(100);
+
+            myArrayList.Add(15);
+            myArrayList.Add("Hello");
+            myArrayList.Add("World");
+            myArrayList.Add(1.439d);
+            myArrayList.Add(67.5d);
+            myArrayList.Add(100);
+            myArrayList.Add(340);
+
+            // delete element with specific value from an arraylist
+            myArrayList.Remove(100);
+            myArrayList.Remove(100); // this does not throws any error, 100 is already removed
+            myArrayList.Remove(100); // this does not throws any error, 100 is already removed
+
+            //delete via index
+            myArrayList.RemoveAt(0);
+
+            // total no. of elements of arrayList
+            System.Console.WriteLine(myArrayList.Count);
+
+            double sum = 0;
+
+            foreach (object obj in myArrayList)
             {
-                new int [] {12,3,4,4,5,56,56,6},
-                new int [] {99,34,9349,29,92,492},
-            };
-
-            // try to access 9349
-
-            System.Console.WriteLine(jaggedArray2[1][2]);
-
-            // try to get all values of jaggedarray
-
-            for (int i = 0; i < jaggedArray2.Length; i++)
-            {
-                for (int j = 0; j < jaggedArray2[i].Length; j++)
+                if (obj is int)
                 {
-                    System.Console.WriteLine(jaggedArray2[i][j]);
+                    sum += Convert.ToDouble(obj);
+                }
+                else if (obj is double)
+                {
+                    sum += (double)obj; // cast object into double
+                }
+                else
+                {
+                    System.Console.WriteLine(obj);
                 }
             }
+            System.Console.WriteLine("total sum of myArrayList is " + sum);
+
         }
+
 
     }
 }
